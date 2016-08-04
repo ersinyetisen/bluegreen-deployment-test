@@ -165,4 +165,39 @@
         </dependency>
         <!-- Liquibase dependency end -->
   </dependencies>
+
+  <properties>
+      <changelog>/src/main/resources/db/liquibase/changesets/db.master.xml</changelog>
+      <mysql.driver>com.mysql.jdbc.Driver</mysql.driver>
+      <mysql.host>localhost</mysql.host>
+      <mysql.port>3306</mysql.port>
+      <mysql.schema>blueGreenTest</mysql.schema>
+      <mysql.username>furkan</mysql.username>
+      <mysql.password>1234</mysql.password>
+  </properties>
+  
+  <build>
+      <!-- Plugins start -->
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.liquibase</groupId>
+                    <artifactId>liquibase-maven-plugin</artifactId>
+                    <version>3.5.1</version>
+                    <configuration>
+                        <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
+                        <changeLogFile>${changelog}</changeLogFile>
+                        <driver>${mysql.driver}</driver>
+                        <url>jdbc:mysql://${mysql.host}:${mysql.port}/${mysql.schema}</url>
+                        <username>${mysql.username}</username>
+                        <password>${mysql.password}</password>
+                        <skipAssembly>true</skipAssembly>
+                    </configuration>
+                    <inherited>false</inherited>
+                </plugin>
+              </plugins>
+        </pluginManagement>
+        <!-- Plugins end -->
+  </build>
+
 </project>
