@@ -12,6 +12,14 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+ 
+    <changelog>/src/main/resources/db/liquibase/changesets/db.master.xml</changelog>
+    <mysql.driver>com.mysql.jdbc.Driver</mysql.driver>
+    <mysql.host>localhost</mysql.host>
+    <mysql.port>3306</mysql.port>
+    <mysql.schema>blueGreenTest</mysql.schema>
+    <mysql.username>furkan</mysql.username>
+    <mysql.password>1234</mysql.password>
   </properties>
 
   <dependencies>
@@ -166,16 +174,6 @@
         <!-- Liquibase dependency end -->
   </dependencies>
 
-  <properties>
-      <changelog>/src/main/resources/db/liquibase/changesets/db.master.xml</changelog>
-      <mysql.driver>com.mysql.jdbc.Driver</mysql.driver>
-      <mysql.host>localhost</mysql.host>
-      <mysql.port>3306</mysql.port>
-      <mysql.schema>blueGreenTest</mysql.schema>
-      <mysql.username>furkan</mysql.username>
-      <mysql.password>1234</mysql.password>
-  </properties>
-  
   <build>
       <!-- Plugins start -->
         <pluginManagement>
