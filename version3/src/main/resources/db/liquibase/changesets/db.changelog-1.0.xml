@@ -1,0 +1,25 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+  http://www.liquibase.org/xml/ns/dbchangelog-ext
+  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+  <changeSet author="spootrick" id="1">
+    <createTable tableName="test">
+      <column name="id" type="INT">
+        <constraints nullable="false"/>
+      </column>
+      <column name="name" type="VARCHAR(20)"/>
+      <column name="last_name" type="VARCHAR(20)"/>
+    </createTable>
+  </changeSet>
+
+  <changeSet author="spootrick" id="2">
+    <addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="test"/>
+  </changeSet>
+
+</databaseChangeLog>
+
