@@ -13,7 +13,7 @@
         <constraints nullable="false"/>
       </column>
       <column name="name" type="VARCHAR(20)"/>
-      <column name="surname" type="VARCHAR(20)"/>
+      <column name="last_name" type="VARCHAR(20)"/>
     </createTable>
   </changeSet>
 
